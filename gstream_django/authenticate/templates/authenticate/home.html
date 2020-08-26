@@ -1,0 +1,39 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<h1>This is the home page</h1>
+
+{% load static %}
+
+{% if user.is_authenticated %}
+<style>
+    body {
+
+        background-image: url("{% static 'stream/world.jpg' %}");
+    }
+
+    
+</style>
+	
+	<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+	<p>Username: {{ user.username}}</p>
+	<p>Email: {{ user.email }}</p>
+    <img class="center" src="{% url 'live-feed' %}" width="320" height="240"> 
+    <img class="center" src="{% url 'live-feed' %}" width="320" height="240">
+    <img class="center" src="{% url 'live-feed' %}" width="320" height="240">
+    <img class="center" src="{% url 'live-feed' %}" width="320" height="240">
+
+
+
+
+       
+     
+    
+
+
+
+{% endif %}
+
+
+{% endblock %}

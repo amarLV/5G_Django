@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is my live stream!</title>
+    <style>
+        body {
+            background-image: url("{% static 'stream/live_from_pluto.jpg' %}");
+        }
+
+        .center {
+            display: block;
+            margin-top: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="color: white;">This is my live stream!</h1>
+    <img class="center" src="{% url 'live-feed' %}" width="320" height="240">
+</div>
+</body>
+</html>
